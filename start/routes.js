@@ -6,7 +6,7 @@ module.exports = (app)=>{
     app.post('/pizza/make', (req,res) =>{
         const {flavor} = req.body
         if(flavor === pizza.sugestao.sabor)
-            res.send({receivedPoints:true,points:pizzaData.sugestao.pontos})
-        else res.send({receivedPoints:false})
+            res.send({receivedPoints:true,points:pizzaData.sugestao.pontos,pizzaMounted:req.body})
+        else res.send({receivedPoints:false,pizzaMounted:req.body})
     })
 }
